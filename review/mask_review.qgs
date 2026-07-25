@@ -1,0 +1,523 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis projectname="SHNA mask review" version="3.44.10-Solothurn">
+  <homePath path=""/>
+  <title>SHNA mask review</title>
+  <projectCrs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></projectCrs>
+  <layer-tree-group>
+    <layer-tree-layer expanded="0" name="✏ my_edits — draw here" patch_size="-1,-1" legend_split_behavior="0" id="my_edits.gpkgmy_edits_53f0dba7dbe15670a71189b43f2a179c" legend_exp="" source="./my_edits.gpkg|layername=my_edits" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="① review_patches — set &#x27;verdict&#x27;" patch_size="-1,-1" legend_split_behavior="0" id="review_patches.gpkgreview_patches_7cfd42c8cda5564caf5d7a46f41a9d54" legend_exp="" source="./review_patches.gpkg|layername=review_patches" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="② water candidates (5)" patch_size="-1,-1" legend_split_behavior="0" id="water_candidates.gpkgwater_candidates_2136f5c3102f5c788283cbde9ee5641b" legend_exp="" source="./water_candidates.gpkg|layername=water_candidates" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="③ woodland candidates, small (12)" patch_size="-1,-1" legend_split_behavior="0" id="woodland_small_candidates.gpkgwoodland_small_7983d083a7ae55c381731b3ff2709d5f" legend_exp="" source="./woodland_small_candidates.gpkg|layername=woodland_small" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="④ THE 160,377 m² candidate" patch_size="-1,-1" legend_split_behavior="0" id="woodland_big_candidate.gpkgwoodland_big_59752ea0fb005cf2bb3f298533cdd162" legend_exp="" source="./woodland_big_candidate.gpkg|layername=woodland_big" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="⑤ Krebsbach hand mask (UTM)" patch_size="-1,-1" legend_split_behavior="0" id="hand_mask_utm.gpkghand_mask_b4e3e7b9e6005e568dec565a0d944a7b" legend_exp="" source="./hand_mask_utm.gpkg|layername=hand_mask" checked="Qt::Checked" providerKey="ogr"/><layer-tree-layer expanded="0" name="⑥ split: brightness + texture" patch_size="-1,-1" legend_split_behavior="0" id="block_segmentation.tif_33eb9f7582cb5018bdc0e99e7fbc07ee" legend_exp="" source="./block_segmentation.tif" checked="Qt::Checked" providerKey="gdal"/><layer-tree-layer expanded="0" name="⑦ same split, unsmoothed" patch_size="-1,-1" legend_split_behavior="0" id="block_segmentation_raw.tif_3220422f8d445d36896506115ad4fd2b" legend_exp="" source="./block_segmentation_raw.tif" checked="Qt::Unchecked" providerKey="gdal"/><layer-tree-layer expanded="0" name="⑧ texture (NIR sd, 3.5 m) — crowns are rough" patch_size="-1,-1" legend_split_behavior="0" id="texture_05m.tif_d5b4c4ffc90d59a5aad1412b0c325670" legend_exp="" source="./texture_05m.tif" checked="Qt::Unchecked" providerKey="gdal"/><layer-tree-layer expanded="0" name="⑨ NDVI" patch_size="-1,-1" legend_split_behavior="0" id="ndvi_05m.tif_10ff1cacc6e85848a59d0a112f6a9ed2" legend_exp="" source="./ndvi_05m.tif" checked="Qt::Unchecked" providerKey="gdal"/><layer-tree-layer expanded="0" name="⑩ FALSE COLOUR (NIR-R-G) 25 cm" patch_size="-1,-1" legend_split_behavior="0" id="cir_025m.tif_e0722da2a95f50ee88606431cdd79a8b" legend_exp="" source="./cir_025m.tif" checked="Qt::Checked" providerKey="gdal"/><layer-tree-layer expanded="0" name="⑪ TRUE COLOUR 25 cm" patch_size="-1,-1" legend_split_behavior="0" id="rgb_025m.tif_70d11af49eed50d3a41c635c4ec7ad8c" legend_exp="" source="./rgb_025m.tif" checked="Qt::Unchecked" providerKey="gdal"/>
+    <custom-order enabled="0"/>
+  </layer-tree-group>
+  <mapcanvas name="theMapCanvas" annotationsVisible="1">
+    <units>meters</units>
+    <extent><xmin>564263.22</xmin><ymin>4724081.93</ymin><xmax>565026.47</xmax><ymax>4725176.68</ymax></extent>
+    <rotation>0</rotation>
+    <destinationsrs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></destinationsrs>
+    <rendermaptile>0</rendermaptile>
+  </mapcanvas>
+  <projectlayers>
+    <maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>my_edits.gpkgmy_edits_53f0dba7dbe15670a71189b43f2a179c</id>
+      <datasource>./my_edits.gpkg|layername=my_edits</datasource>
+      <layername>✏ my_edits — draw here</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" referencescale="-1" type="singleSymbol"><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,0,0,0"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,0,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.8"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></renderer-v2>
+      
+      
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>review_patches.gpkgreview_patches_7cfd42c8cda5564caf5d7a46f41a9d54</id>
+      <datasource>./review_patches.gpkg|layername=review_patches</datasource>
+      <layername>① review_patches — set &#x27;verdict&#x27;</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" attr="verdict" referencescale="-1" type="categorizedSymbol"><categories><category render="true" value="" symbol="0" label="unreviewed"/><category render="true" value="grass" symbol="1" label="grass — KEEP in analysis"/><category render="true" value="woodland" symbol="2" label="woodland — mask out"/><category render="true" value="wetland" symbol="3" label="wetland — mask out"/><category render="true" value="water" symbol="4" label="water — mask out"/><category render="true" value="other" symbol="5" label="other"/><category render="true" value="unsure" symbol="6" label="unsure"/></categories><symbols><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="247,225,26,80"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="247,225,26,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.8"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="1" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,200,0,90"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,140,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="2" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="27,120,55,120"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="27,120,55,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="3" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="44,127,184,120"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="44,127,184,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="4" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,80,255,120"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,60,200,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="5" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="160,160,160,110"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="90,90,90,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="6" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,140,0,110"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,140,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.8"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></symbols></renderer-v2>
+      <labeling type="simple">
+        <settings><text-style fieldName="patch_id" fontSize="9" textColor="255,255,255,255"
+            fontWeight="75" isExpression="0">
+          <text-buffer bufferDraw="1" bufferSize="1" bufferColor="0,0,0,255"/>
+        </text-style>
+        <placement placement="0" centroidInside="1"/>
+        <rendering scaleVisibility="0" drawLabels="1"/></settings>
+      </labeling>
+      <fieldConfiguration>
+        <field name="verdict" configurationFlags="NoFlag">
+          <editWidget type="ValueMap">
+            <config><Option type="Map"><Option name="map" type="List">
+              <Option type="Map"><Option name="" type="QString" value=""/></Option><Option type="Map"><Option name="grass" type="QString" value="grass"/></Option><Option type="Map"><Option name="woodland" type="QString" value="woodland"/></Option><Option type="Map"><Option name="wetland" type="QString" value="wetland"/></Option><Option type="Map"><Option name="water" type="QString" value="water"/></Option><Option type="Map"><Option name="other" type="QString" value="other"/></Option><Option type="Map"><Option name="unsure" type="QString" value="unsure"/></Option>
+            </Option></Option></config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>water_candidates.gpkgwater_candidates_2136f5c3102f5c788283cbde9ee5641b</id>
+      <datasource>./water_candidates.gpkg|layername=water_candidates</datasource>
+      <layername>② water candidates (5)</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" referencescale="-1" type="singleSymbol"><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,80,255,90"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,60,200,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.6"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></renderer-v2>
+      
+      
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>woodland_small_candidates.gpkgwoodland_small_7983d083a7ae55c381731b3ff2709d5f</id>
+      <datasource>./woodland_small_candidates.gpkg|layername=woodland_small</datasource>
+      <layername>③ woodland candidates, small (12)</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" referencescale="-1" type="singleSymbol"><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,255,255,0"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,160,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></renderer-v2>
+      
+      
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>woodland_big_candidate.gpkgwoodland_big_59752ea0fb005cf2bb3f298533cdd162</id>
+      <datasource>./woodland_big_candidate.gpkg|layername=woodland_big</datasource>
+      <layername>④ THE 160,377 m² candidate</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" referencescale="-1" type="singleSymbol"><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,255,255,0"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,255,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="1.0"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></renderer-v2>
+      
+      
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="vector" geometry="Polygon" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0">
+      <id>hand_mask_utm.gpkghand_mask_b4e3e7b9e6005e568dec565a0d944a7b</id>
+      <datasource>./hand_mask_utm.gpkg|layername=hand_mask</datasource>
+      <layername>⑤ Krebsbach hand mask (UTM)</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider encoding="UTF-8">ogr</provider>
+      <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" attr="class" referencescale="-1" type="categorizedSymbol"><categories><category render="true" value="vegetation" symbol="0" label="vegetation"/><category render="true" value="wetland" symbol="1" label="wetland"/><category render="true" value="lake" symbol="2" label="lake"/><category render="true" value="lake_michigan" symbol="3" label="lake_michigan"/><category render="true" value="human_structure" symbol="4" label="human_structure"/><category render="true" value="unlabeled" symbol="5" label="unlabeled"/></categories><symbols><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="0" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,255,255,50"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,255,255,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.5"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="1" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,0,255,50"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,0,255,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="2" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,102,255,60"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,102,255,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="3" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="0,102,255,60"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="0,102,255,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="4" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,128,0,80"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,128,0,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol><symbol is_animated="0" clip_to_extent="1" alpha="1" frame_rate="10" name="5" force_rhr="0" type="fill"><layer enabled="1" locked="0" class="SimpleFill" pass="0">
+          <Option type="Map">
+            <Option name="color" type="QString" value="255,255,255,60"/>
+            <Option name="joinstyle" type="QString" value="bevel"/>
+            <Option name="offset" type="QString" value="0,0"/>
+            <Option name="offset_unit" type="QString" value="MM"/>
+            <Option name="outline_color" type="QString" value="255,255,255,255"/>
+            <Option name="outline_style" type="QString" value="solid"/>
+            <Option name="outline_width" type="QString" value="0.7"/>
+            <Option name="outline_width_unit" type="QString" value="MM"/>
+            <Option name="style" type="QString" value="solid"/>
+          </Option>
+        </layer></symbol></symbols></renderer-v2>
+      
+      
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerOpacity>1</layerOpacity>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>block_segmentation.tif_33eb9f7582cb5018bdc0e99e7fbc07ee</id>
+      <datasource>./block_segmentation.tif</datasource>
+      <layername>⑥ split: brightness + texture</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="paletted" band="1" opacity="0.55" alphaBand="-1" nodataColor=""><colorPalette><paletteEntry value="1" color="#1b7837" label="woodland" alpha="255"/><paletteEntry value="2" color="#f7e11a" label="grass_like" alpha="255"/><paletteEntry value="3" color="#2c7fb8" label="wetland" alpha="255"/><paletteEntry value="4" color="#7a7a7a" label="canopy_shadow" alpha="255"/></colorPalette></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>block_segmentation_raw.tif_3220422f8d445d36896506115ad4fd2b</id>
+      <datasource>./block_segmentation_raw.tif</datasource>
+      <layername>⑦ same split, unsmoothed</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="paletted" band="1" opacity="0.55" alphaBand="-1" nodataColor=""><colorPalette><paletteEntry value="1" color="#1b7837" label="woodland" alpha="255"/><paletteEntry value="2" color="#f7e11a" label="grass_like" alpha="255"/><paletteEntry value="3" color="#2c7fb8" label="wetland" alpha="255"/><paletteEntry value="4" color="#7a7a7a" label="canopy_shadow" alpha="255"/></colorPalette></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>texture_05m.tif_d5b4c4ffc90d59a5aad1412b0c325670</id>
+      <datasource>./texture_05m.tif</datasource>
+      <layername>⑧ texture (NIR sd, 3.5 m) — crowns are rough</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="singlebandpseudocolor" band="1" opacity="1" alphaBand="-1" classificationMin="0" classificationMax="2500" nodataColor=""><rastershader><colorrampshader colorRampType="INTERPOLATED" classificationMode="1" clip="0" minimumValue="0" maximumValue="2500"><item value="0" color="#000000" label="0" alpha="255"/><item value="314" color="#2c3e70" label="314" alpha="255"/><item value="900" color="#e07b39" label="900" alpha="255"/><item value="1512" color="#ffe680" label="1512" alpha="255"/><item value="2500" color="#ffffff" label="2500" alpha="255"/></colorrampshader></rastershader></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>ndvi_05m.tif_10ff1cacc6e85848a59d0a112f6a9ed2</id>
+      <datasource>./ndvi_05m.tif</datasource>
+      <layername>⑨ NDVI</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="singlebandpseudocolor" band="1" opacity="1" alphaBand="-1" classificationMin="-0.2" classificationMax="0.9" nodataColor=""><rastershader><colorrampshader colorRampType="INTERPOLATED" classificationMode="1" clip="0" minimumValue="-0.2" maximumValue="0.9"><item value="-0.2" color="#8c510a" label="-0.2" alpha="255"/><item value="0.0" color="#d8b365" label="0.0" alpha="255"/><item value="0.3" color="#f6e8c3" label="0.3" alpha="255"/><item value="0.45" color="#c7eae5" label="0.45" alpha="255"/><item value="0.6" color="#5ab4ac" label="0.6" alpha="255"/><item value="0.9" color="#01665e" label="0.9" alpha="255"/></colorrampshader></rastershader></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>cir_025m.tif_e0722da2a95f50ee88606431cdd79a8b</id>
+      <datasource>./cir_025m.tif</datasource>
+      <layername>⑩ FALSE COLOUR (NIR-R-G) 25 cm</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      <noData><noDataList bandNo="1" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList><noDataList bandNo="2" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList><noDataList bandNo="3" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList></noData>
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="multibandcolor" redBand="1" greenBand="2" blueBand="3" opacity="1" alphaBand="-1" nodataColor=""><redContrastEnhancement><minValue>200</minValue><maxValue>13000</maxValue><algorithm>StretchToMinimumMaximum</algorithm></redContrastEnhancement><greenContrastEnhancement><minValue>150</minValue><maxValue>7000</maxValue><algorithm>StretchToMinimumMaximum</algorithm></greenContrastEnhancement><blueContrastEnhancement><minValue>400</minValue><maxValue>5500</maxValue><algorithm>StretchToMinimumMaximum</algorithm></blueContrastEnhancement></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer><maplayer type="raster" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" refreshOnNotifyEnabled="0">
+      <id>rgb_025m.tif_70d11af49eed50d3a41c635c4ec7ad8c</id>
+      <datasource>./rgb_025m.tif</datasource>
+      <layername>⑪ TRUE COLOUR 25 cm</layername>
+      <srs><spatialrefsys nativeFormat="Wkt">
+      <proj4>+proj=utm +zone=16 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
+      <srsid>3230</srsid><srid>6345</srid><authid>EPSG:6345</authid>
+      <description>NAD83(2011) / UTM zone 16N</description>
+      <projectionacronym>utm</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys></srs>
+      <provider>gdal</provider>
+      <noData><noDataList bandNo="1" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList><noDataList bandNo="2" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList><noDataList bandNo="3" useSrcNoData="0"><noDataRange min="-1" max="0.5"/><noDataRange min="65500" max="70000"/></noDataList></noData>
+      <pipe>
+        <provider>
+          <resampling enabled="true" maxOversampling="2"
+            zoomedInResamplingMethod="nearestNeighbour" zoomedOutResamplingMethod="average"/>
+        </provider>
+        <rasterrenderer type="multibandcolor" redBand="1" greenBand="2" blueBand="3" opacity="1" alphaBand="-1" nodataColor=""><redContrastEnhancement><minValue>150</minValue><maxValue>7000</maxValue><algorithm>StretchToMinimumMaximum</algorithm></redContrastEnhancement><greenContrastEnhancement><minValue>400</minValue><maxValue>5500</maxValue><algorithm>StretchToMinimumMaximum</algorithm></greenContrastEnhancement><blueContrastEnhancement><minValue>200</minValue><maxValue>4000</maxValue><algorithm>StretchToMinimumMaximum</algorithm></blueContrastEnhancement></rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0" gamma="1"/>
+        <huesaturation colorizeOn="0" saturation="0" grayscaleMode="0"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+  </projectlayers>
+  <layerorder/>
+  <properties>
+    <Measure><Ellipsoid type="QString">EPSG:7019</Ellipsoid></Measure>
+    <Gui><CanvasColour type="QString">#ffffff</CanvasColour></Gui>
+    <PositionPrecision><Automatic type="bool">true</Automatic></PositionPrecision>
+  </properties>
+</qgis>

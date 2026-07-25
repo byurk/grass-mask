@@ -3,3 +3,7 @@ mask_attachments.zip
 mask.qgs~
 ortho_RGB_downsampled.tif
 ortho.tif
+
+# review/ — 25 cm composites are regenerable from the ortho (see review/README.md)
+review/cir_025m.tif
+review/rgb_025m.tif
